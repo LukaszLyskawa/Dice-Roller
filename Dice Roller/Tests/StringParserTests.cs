@@ -12,14 +12,15 @@ namespace Tests
     [TestClass]
     public class StringParserTests
     {
-
+        {
+            return $"{amount}d{sides}{Enum.GetName(typeof(DropKeepType), operationType)}{operationAmount}{modifier>=0?"+":"-"}{modifier}";
+        }
         
         const int amount=3;
         const int sides=8;
         const DropKeepType operationType = DropKeepType.hl;
         const int operationAmount = 2;
         const int modifier = 1;
-        string ROLLSTRING = $"{amount}d{sides}{Enum.GetName(typeof(DropKeepType),operationType)}{operationAmount}+{modifier}";
 
 
         [TestMethod]
